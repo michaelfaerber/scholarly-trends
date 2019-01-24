@@ -1,4 +1,4 @@
-""" This module is used to create a data frame with all phrases which occur at lest 100 times in the whole corpus (the
+""" This module is used to create a data frame with all entity mentions which occur at lest 100 times in the whole corpus (the
 common words which occur 50000 times or more are later discarded), gets the percentage of occurrences they occur in each
 year from 2007 to 2017, and if they occur in at least 3 of these years, calculates the Mann Kendall and Theil Sen
 statistics. These statistics calculate the strength of a trend, and 5 files are written to which have: 1. Positive
