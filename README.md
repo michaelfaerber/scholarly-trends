@@ -1,7 +1,7 @@
 # scholarly-trends
 
 
-Step 1: 
+# Step 1: 
 First, run the programs which produce intermediate files which are used to get the final statistics.
 
 
@@ -27,7 +27,7 @@ wiki_phrase_count_dataframe.pickle
 wiki_doc_count_dataframe.pickle
 
 
-Step 2: 
+# Step 2: 
 The pickle and JSON files are expected to have been created already. The programs to calculate the Mann Kendall and Theil Sen statistics for noun phrases are the following (with description): 
 
 Mann-Kendall Theil-Sen/Noun Phrases/mannkendall_theilsen_total.py
