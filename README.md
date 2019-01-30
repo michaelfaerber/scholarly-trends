@@ -1,5 +1,5 @@
 # scholarly-trends
-
+This repository contains the code for determining positively and negatively trending scientific concepts.
 
 ## Step 1: 
 First, run the programs which produce intermediate files which are used to get the final statistics.
@@ -13,17 +13,20 @@ For __noun phrases__, run:
 For __entity mentions__: The other 2 'wiki' programs are used to create json files for entity mentions.
 
 2. Run the programs to generate 'pickle' files for phrases frequencies year-wise. This also creates sets of negative and trending phrases by linear regression as a byproduct:
-For noun phrases: yearly_trends_and_yearly_pickle.py
-For entity mentions: yearly_wiki_trends_pickle.py
+For noun phrases: `yearly_trends_and_yearly_pickle.py`
+For entity mentions: `yearly_wiki_trends_pickle.py`
 
 Run pickle_phrase_doc_counts.py to produce total phrase counts (and unique occurrences) of noun phrases (over all years) as pickles. The foll. are the files produced
+```
 total_phrase_count_dataframe.pickle
 total_doc_count_dataframe.pickle
+```
 
-Run pickle_wikiurl_doc_counts.py to produce total entity mention counts and unique occurrences of entity mentions (over all phrases) as pickles. The foll. are the files produced.
+Run pickle_wikiurl_doc_counts.py to produce total entity mention counts and unique occurrences of entity mentions (over all phrases) as pickles. The following files are produced:
+```
 wiki_phrase_count_dataframe.pickle
 wiki_doc_count_dataframe.pickle
-
+```
 
 ## Step 2: 
 The pickle and JSON files are expected to have been created already. The programs to calculate the Mann Kendall and Theil Sen statistics for noun phrases are the following (with description): 
