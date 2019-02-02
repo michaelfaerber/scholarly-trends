@@ -3,6 +3,7 @@
 import os
 from collections import Counter
 from glob import iglob
+import pickle
 import copy
 import pysolr
 import requests
