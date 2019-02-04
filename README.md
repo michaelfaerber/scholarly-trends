@@ -1,11 +1,13 @@
 # scholarly-trends
 This repository contains the code for determining positively and negatively trending scientific concepts.
 
-## Step 1: 
-First, run the programs which produce intermediate files which are used to get the final statistics.
+## Step 1: Obtain Scientific Concepts
+We assume that the scientific concepts to be analyzed have already been obtained. See [here](http://dbis.informatik.uni-freiburg.de/content/team/faerber/data/LREC2018/arxiv-filtered-nps.tar.bz2) for the filtered noun phrase data set based on the [arXiv CS dataset](http://citation-recommendation.org/publications/#A_High-Quality_Gold_Standard_for_Citation-based_Tasks).
 
-1. Run the indexing programs after creating the Apache Solr indices. Three indices are required (one for noun phrases, one for entity mentions, and one for getting the published date from Arxiv's metadata). 
-The indices are: 
+## Step 2: Generate intermediate files
+Then, we run the programs that produce intermediate files to be used to obtain the final statistics.
+
+1. Run the indexing programs after creating the Apache Solr indices. The following three indices are required (one for noun phrases, one for entity mentions, and one for getting the published date from arXiv's metadata):
 ```
 arxiv_metadata
 nounphrases
@@ -45,8 +47,8 @@ wiki_doc_count_dataframe.pickle
 ```
 Both the above programs are located at: `scholarly-trends/Intermediate Programs/Create PICKLE files/`
 
-## Step 2: 
-Run programs to calculate the linear regression statistics while also creating more intermediate pickles which are used in the Theil-Sen and Mann-Kendall calculations.
+## Step 2: Calculate linear regression and further intermediate files
+Run the programs to calculate the linear regression statistics while also creating more intermediate pickles which are used in the Theil-Sen and Mann-Kendall calculations.
 
 The two programs which should be run in this step are: 
 For noun phrases: `yearly_trends_and_yearly_pickle.py`
@@ -54,7 +56,7 @@ For entity mentions: `yearly_wiki_trends_pickle.py`
 
 Both programs are located at: `scholarly-trends/Linear Regression`. These programs also create two sets of 11 pickle files (one for each year from 2007 to 2017) which are used in Step 3. 
 
-## Step 3: 
+## Step 3: Run Mann-Kendall and Theil Sen statistics
 The pickle and JSON files are expected to have been created already. The programs to calculate the Mann Kendall and Theil Sen statistics for noun phrases are the following (with description): 
 ```
 scholarly-trends/Mann-Kendall Theil-Sen/Noun Phrases/mannkendall_theilsen_total.py
@@ -81,14 +83,14 @@ scholarly-trends/Mann-Kendall Theil-Sen/Entity Mentions/mannkendall_theilsen_tot
 scholarly-trends/Mann-Kendall Theil-Sen/Entity Mentions/mannkendall_theilsen_docs_wiki.py
 ```
 
-## Additional programs: 
-A series of other programs are included, which can be used for other kinds of analysis if needed. 
+## Additional programs
+We provide a set of further programs that can be used for other kinds of analysis.
 
 1. The programs under `scholarly-trends/Diff between Time Points` produce a list of noun phrases which occur < 50000 times along with the percentage of docs in which they occur in each year/month (everything is sorted by num_documents). 
 2. `scholarly-trends/Diff between Time Points` is a linear regression program, but takes into account 4 months in 2007 and 4 months in 2017 only. 
 3. `scholarly-trends/Sparsity Statistics` contains programs which are used to produce files with sparsity statistics. For noun phrases, the program used is `sparsity_stats.py` and the following calcuations are made: 
-(i) how many noun phrases occur in less than 3 years, and how many occur in more than 3 years
-(ii) how many noun phrases occur below 100 times or above 50000 times, and how many occur between 101 and 49999 times
-(iii) how many noun phrases occur in less than 3 years AND have a frequency above 50000 or below 100, and how many occur in more than 3 years and have a frequency between 101 and 49999. 
+*(i) how many noun phrases occur in less than 3 years, and how many occur in more than 3 years
+*(ii) how many noun phrases occur below 100 times or above 50000 times, and how many occur between 101 and 49999 times
+*(iii) how many noun phrases occur in less than 3 years AND have a frequency above 50000 or below 100, and how many occur in more than 3 years and have a frequency between 101 and 49999. 
 
 A similar set of statistics is computed for entity mentions as well using the program `sparsity_stats_wiki.py`.
