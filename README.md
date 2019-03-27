@@ -94,3 +94,27 @@ We provide a set of further programs that can be used for other kinds of analysi
 *(iii) how many noun phrases occur in less than 3 years AND have a frequency above 50000 or below 100, and how many occur in more than 3 years and have a frequency between 101 and 49999. 
 
 A similar set of statistics is computed for entity mentions as well using the program `sparsity_stats_wiki.py`.
+
+## Demo 
+Associated to this work is the demo available at http://scholarsight.org/. See also https://github.com/michaelfaerber/scholarsight.
+
+
+## Contact
+Feel free to reach out to us in case of questions or suggestions:
+
+[Michael Färber](https://sites.google.com/view/michaelfaerber), michael.faerber@cs&#46;uni-freiburg&#46;de
+
+## How to Cite
+Please cite our work as follows:
+```
+@inproceedings{Faerber2019BIR,
+  author    = {Michael F{\"{a}}rber and
+               Adam Jatowt},
+  title     = "{Finding Temporal Trends of Scientific Concepts}",
+  booktitle = "{Proceedings of the 8th International Workshop on Bibliometric-enhanced Information Retrieval}",
+  series    = "{BIR'19}",
+  location  = "{Cologne, Germany}",
+  pages     = {},
+  year      = {2019}
+}
+```
