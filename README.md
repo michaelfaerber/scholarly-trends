@@ -114,7 +114,8 @@ Please cite our work as follows:
   booktitle = "{Proceedings of the 8th International Workshop on Bibliometric-enhanced Information Retrieval}",
   series    = "{BIR'19}",
   location  = "{Cologne, Germany}",
-  pages     = {},
-  year      = {2019}
+  pages     = {132--139},
+  year      = {2019},
+  url       = {http://ceur-ws.org/Vol-2345/paper12.pdf}
 }
 ```
